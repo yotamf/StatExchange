@@ -1,6 +1,6 @@
 function setupChart() {
     margin = {top: 40, right: 20, bottom: 30, left: 40},
-        width = window.screen.availWidth/2 - margin.left - margin.right,
+        width = 4*window.screen.availWidth/7 - margin.left - margin.right,
         height = window.screen.availHeight/3 - margin.top - margin.bottom;
 
     x = d3.scale.ordinal()
