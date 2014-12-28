@@ -54,6 +54,7 @@
                 searchUserOnEdit(functionMap, maxPagesToFetch);
                 setupChart();
                 functionMap.GetUserId(functionMap, 'Geoff Dalgas', 1);
+                $('#maxPages').html('Fetched comment pages number is limited to ' + maxPagesToFetch + '.');
                 } catch (err) {
                   alert(err);
                 }
@@ -94,6 +95,10 @@
 
     <div class="container">
         <div id="statsCol" class="col-md-4">
+        </div>
+    </div>
+    <div class="container">
+        <div id="maxPages" class="col-md-4">
         </div>
     </div>
         
