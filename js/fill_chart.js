@@ -1,7 +1,9 @@
 function fillBarWithData(functionMap, commentsData) {
+    
     $("#svg").empty();
     $(".axis").empty();
     $(".bar").empty();
+
     svg.selectAll("*").remove();
 
     x.domain(commentsData.map(function(d) { return d.date; }));

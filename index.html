@@ -44,12 +44,13 @@
 <script src = "js/process_comments.js"></script>
 <script src = "js/function_map.js"></script>
 <script src = "js/fill_chart.js"></script>
+<script src = "js/chart_settings.js"></script>
+    
     
 <script>
     functionMap = new FunctionMap();
 </script>
-    
-  <body onload="searchUserOnEdit(functionMap);">
+  <body onload="searchUserOnEdit(functionMap); setupChart(); getUserIdByDisplayName(functionMap, 'Geoff Dalgas', 1);">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -104,12 +105,6 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./bower_components/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
       
-
-<script src = "js/chart_settings.js"></script>
-<script>    
-    getUserIdByDisplayName(new FunctionMap(), "Geoff Dalgas", 1);
-</script>
-
 <!--"Jon Skeet", "bobince", "dubi", "Geoff Dalgas"-->
   
       

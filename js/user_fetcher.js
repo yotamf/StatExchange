@@ -4,6 +4,8 @@ function getUserIdByDisplayName (functionMap, displayName, maxPagesToDownload=-1
   var hasMore = true;
   var stop = false;
   var quota_remaining = -1;
+  var error = false;
+  var error_id = -1;
   var res = $.ajax({
     type: "GET",
     //url: "users.json",
@@ -11,6 +13,8 @@ function getUserIdByDisplayName (functionMap, displayName, maxPagesToDownload=-1
     dataType: "json",
     async: true,
     error: function (jqXHR, textStatus, errorThrown) {
+      error = true;
+      error_id = errorThrown;
       stop = true;
     },
     fail: function (jqXHR, textStatus, errorThrown) {
@@ -36,7 +40,9 @@ function getUserIdByDisplayName (functionMap, displayName, maxPagesToDownload=-1
           if (hasMore && (stop == false) && (maxPagesToDownload == -1 || page < maxPagesToDownload)) {
               getUserIdByDisplayName(functionMap, displayName, maxPagesToDownload, page);
           } else {
-              if (quota_remaining == 0) {
+              if (error) {
+                  window.alert("error:" + error_id);
+              } else if (quota_remaining == 0) {
                   window.alert("No more quota");
               } else {
                 window.alert("User not found");
