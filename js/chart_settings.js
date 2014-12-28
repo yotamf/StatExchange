@@ -1,11 +1,11 @@
 function setupChart() {
     if (window.screen.availWidth < 500) {
-        margin = {top: 40, right: 20, bottom: 30, left: 40},
-            width = 4*window.screen.width/7 - margin.left - margin.right,
-            height = window.screen.height/3 - margin.top - margin.bottom;
-    } else {
         margin = {top: 40, right: 10, bottom: 30, left: 20},
-            width = 2*window.screen.width/3 - margin.left - margin.right,
+            width = window.screen.availWidth - margin.left - margin.right,
+            height = window.screen.availHeight/3 - margin.top - margin.bottom;
+    } else {
+        margin = {top: 40, right: 20, bottom: 30, left: 40},
+            width = window.screen.availWidth/2 - margin.left - margin.right,
             height = window.screen.height/3 - margin.top - margin.bottom;
     }
 
