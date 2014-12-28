@@ -1,5 +1,8 @@
 /* Takes the firsr id it finds for the given display name */
-function getUserIdByDisplayName (functionMap, displayName, maxPagesToDownload=-1, page=1) {
+function getUserIdByDisplayName (functionMap, displayName, maxPagesToDownload, page) {
+  if (typeof(maxPagesToDownload) === 'undefined') maxPagesToDownload = -1;
+  if (typeof(page) === 'undefined') page = 1;
+    
   var users = new Array();
   var hasMore = true;
   var stop = false;

@@ -20,4 +20,4 @@ function countCommentsPerDay(functionMap, comments) {
             return daysOfTheWeek.indexOf(d1.date) > daysOfTheWeek.indexOf(d2.date); }); // Ascending order
     
     return arr;
-}
+};

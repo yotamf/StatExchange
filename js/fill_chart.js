@@ -1,5 +1,4 @@
 function fillBarWithData(functionMap, commentsData) {
-    
     $("#svg").empty();
     $(".axis").empty();
     $(".bar").empty();
@@ -34,4 +33,4 @@ function fillBarWithData(functionMap, commentsData) {
       .attr("height", function(d) { return height - y(d.frequency); })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide); 
-}
+};

@@ -45,12 +45,19 @@
 <script src = "js/function_map.js"></script>
 <script src = "js/fill_chart.js"></script>
 <script src = "js/chart_settings.js"></script>
-    
-    
 <script>
-    functionMap = new FunctionMap();
+    var maxPagesToFetch = 3; // Maximal data pages fetched StackExchange per query
 </script>
-  <body onload="searchUserOnEdit(functionMap); setupChart(); getUserIdByDisplayName(functionMap, 'Geoff Dalgas', 1);">
+    
+  <body onload="try {
+                var functionMap = new FunctionMap();
+                searchUserOnEdit(functionMap, maxPagesToFetch);
+                setupChart();
+                functionMap.GetUserId(functionMap, 'Geoff Dalgas', 1);
+                } catch (err) {
+                  alert(err);
+                }
+                ">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">

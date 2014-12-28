@@ -1,6 +1,6 @@
 function FunctionMap() {
-    this.GetUserId   = getUserIdByDisplayName;
-    this.GetUserData = loadCommentData;
-    this.ProcessData = countCommentsPerDay;
-    this.DisplayData = fillBarWithData;
+    this.GetUserId   = window.getUserIdByDisplayName;
+    this.GetUserData = window.loadCommentData;
+    this.ProcessData = window.countCommentsPerDay;
+    this.DisplayData = window.fillBarWithData;
 };
