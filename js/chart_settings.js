@@ -1,7 +1,7 @@
 function setupChart() {
     margin = {top: 40, right: 20, bottom: 30, left: 40},
-        width = 960 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+        width = window.screen.availWidth/2 - margin.left - margin.right,
+        height = window.screen.availHeight/3 - margin.top - margin.bottom;
 
     x = d3.scale.ordinal()
         .rangeRoundBands([0, width], .1);
